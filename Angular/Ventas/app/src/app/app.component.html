@@ -1,0 +1,11 @@
+<!--menu con el modulo material-->
+<mat-drawer-container>
+  <mat-drawer #drawer mode="side">
+    <a [routerLink]="['/home']">Inicio</a>
+    <a [routerLink]="['/cliente']">Cliente</a>
+  </mat-drawer>
+  <div>
+    <button (click)="drawer.toggle()">Toggle</button>
+    <router-outlet></router-outlet>
+  </div>
+</mat-drawer-container>
