@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Response } from '../models/response';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ import { Observable } from 'rxjs';
 export class ApiClienteService {
 
   url : string = 'https://localhost:44325/api/cliente';
-  
+
   constructor( private _http: HttpClient ) { }
 
   getClientes(): Observable<Response>
