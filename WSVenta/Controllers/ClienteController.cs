@@ -19,7 +19,7 @@ namespace WSVenta.Controllers
             {
                 using (VentaRealContext db = new VentaRealContext())
                 {
-                    var lst = db.Cliente.ToList();
+                    var lst = db.Cliente.OrderByDescending(d=>d.Id).ToList();
                     respuesta.Exito = 1;
                     respuesta.Data = lst;
                 }

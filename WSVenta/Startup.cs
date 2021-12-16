@@ -25,7 +25,9 @@ namespace WSVenta
                 opciones.AddPolicy(name: MiCors,
                                     builder => 
                                     {
+                                        builder.WithHeaders("*");//permite headers para los métodos post
                                         builder.WithOrigins("*");//agregar las url o * para permitir todo
+                                        builder.WithMethods("*");//permite métodos
                                     });
             });
             services.AddControllers();
