@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ClienteComponent } from './cliente/cliente.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DialogClienteComponent } from './cliente/dialog/dialogcliente.component';
+import { DialogDeleteComponent } from './common/delete/dialogdelete.component';
 //modulo de material
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -22,7 +23,8 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     HomeComponent,
     ClienteComponent,
-    DialogClienteComponent
+    DialogClienteComponent,
+    DialogDeleteComponent
   ],
   imports: [
     BrowserModule,
