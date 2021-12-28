@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Linq;
 using WSVenta.Models;
@@ -9,6 +10,8 @@ namespace WSVenta.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    //el Authorize valida la configuración que se hizo para el JWT
+    [Authorize]
     public class ClienteController : ControllerBase
     {
         [HttpGet]

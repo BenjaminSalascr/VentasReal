@@ -1,8 +1,13 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System.Text;
+using WSVenta.Models.Common;
+using WSVenta.Services;
+using Microsoft.IdentityModel.Tokens;
 
 namespace WSVenta
 {
@@ -31,6 +36,32 @@ namespace WSVenta
                                     });
             });
             services.AddControllers();
+
+            //configuración para JWT
+            var appSettingsSection = Configuration.GetSection("AppSettings");//obtenemos la sección del appsettings.json
+            services.Configure<AppSettings>(appSettingsSection); //inyectamos a la clase creada
+            //JWT
+            var appSettings = appSettingsSection.Get<AppSettings>();//obtener lo que hicimos en los renglones anteriores
+            var llave = Encoding.ASCII.GetBytes(appSettings.Secreto);//bytes[] de secreto
+            //damos de alta la autentificación
+            services.AddAuthentication(d =>
+            {
+                d.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                d.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(d=>
+                {
+                    d.RequireHttpsMetadata = false;
+                    d.SaveToken = true;
+                    d.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuerSigningKey = true,
+                        IssuerSigningKey = new SymmetricSecurityKey(llave),
+                        ValidateIssuer = false,
+                        ValidateAudience = false
+                    };
+                });
+
+            services.AddScoped<IUserService, UserService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,6 +77,7 @@ namespace WSVenta
             app.UseRouting();
 
             app.UseCors(MiCors);
+            app.UseAuthentication();
 
             app.UseAuthorization();
 
