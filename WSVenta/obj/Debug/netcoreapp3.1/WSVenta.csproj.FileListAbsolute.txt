@@ -57,7 +57,6 @@ C:\Users\jorge.ardilar\source\repos\VentasReal\WSVenta\bin\Debug\netcoreapp3.1\r
 C:\Users\jorge.ardilar\source\repos\VentasReal\WSVenta\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\jorge.ardilar\source\repos\VentasReal\WSVenta\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\jorge.ardilar\source\repos\VentasReal\WSVenta\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\jorge.ardilar\source\repos\VentasReal\WSVenta\obj\Debug\netcoreapp3.1\WSVenta.csproj.AssemblyReference.cache
 C:\Users\jorge.ardilar\source\repos\VentasReal\WSVenta\obj\Debug\netcoreapp3.1\WSVenta.csproj.CopyComplete
 C:\Users\jorge\source\repos\VentasReal\WSVenta\obj\Debug\netcoreapp3.1\WSVenta.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\jorge\source\repos\VentasReal\WSVenta\obj\Debug\netcoreapp3.1\WSVenta.AssemblyInfoInputs.cache
@@ -121,3 +120,4 @@ C:\Users\jorge\source\repos\VentasReal\WSVenta\obj\Debug\netcoreapp3.1\WSVenta.p
 C:\Users\jorge\source\repos\VentasReal\WSVenta\obj\Debug\netcoreapp3.1\WSVenta.genruntimeconfig.cache
 C:\Users\jorge\source\repos\VentasReal\WSVenta\obj\Debug\netcoreapp3.1\WSVenta.csproj.AssemblyReference.cache
 C:\Users\jorge\source\repos\VentasReal\WSVenta\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\jorge.ardilar\source\repos\VentasReal\WSVenta\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
