@@ -4,6 +4,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { Response } from '../models/response';
 import { Usuario } from '../models/usuario';
 import { map } from 'rxjs/operators';
+import { Login } from '../models/login';
 
 const httpOptions = {
     headers: new HttpHeaders({
@@ -25,8 +26,8 @@ export class ApiauthService {
         this.usuarioSubject = new BehaviorSubject<Usuario>(JSON.parse(localStorage.getItem('usuario')! ));
     }
 
-    login(email: string, password: string): Observable<Response> {
-        return this.http.post<Response>(this.url, { email, password }, httpOptions).pipe(
+    login(login: Login): Observable<Response> {
+        return this.http.post<Response>(this.url, login, httpOptions).pipe(
             map(response => {
                 if (response.exito === 1) {
                     const usuario: Usuario = response.data;
