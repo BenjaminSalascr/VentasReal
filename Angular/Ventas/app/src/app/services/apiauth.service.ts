@@ -10,20 +10,22 @@ const httpOptions = {
     headers: new HttpHeaders({
         'Content-Type': 'application/json'
     })
-  };
+};
 
 @Injectable({ providedIn: 'root' })
 export class ApiauthService {
     url: string = 'https://localhost:44325/api/user/login';
-    private usuarioSubject: BehaviorSubject<Usuario>;
-    public get usuarioData(): Usuario{
-        return this.usuarioSubject.value;
+    private usuarioSubject: BehaviorSubject<Usuario | null>;
+    public usuario: Observable<Usuario | null>;
+
+    public get usuarioData(): Usuario {
+        return this.usuarioSubject.value!;
     }
 
-    constructor(private http: HttpClient) { 
-        //localStorage.getItem() puede devolver una cadena o null. JSON.parse() requiere una cadena
-        //! para que no tome null o undefined
-        this.usuarioSubject = new BehaviorSubject<Usuario>(JSON.parse(localStorage.getItem('usuario')! ));
+    constructor(private http: HttpClient) {
+        //localStorage.getItem() puede devolver una cadena o null. JSON.parse() requiere una cadena        
+        this.usuarioSubject = new BehaviorSubject<Usuario | null>(JSON.parse(localStorage.getItem('usuario') || 'null'));
+        this.usuario = this.usuarioSubject.asObservable();
     }
 
     login(login: Login): Observable<Response> {
@@ -41,7 +43,7 @@ export class ApiauthService {
 
     logout() {
         localStorage.removeItem('usuario');
-        this.usuarioSubject.next({email: "", token: ""});// no permitió colocar null
+        this.usuarioSubject.next(null);// no permitió colocar null
     }
 
 }
