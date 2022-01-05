@@ -43,7 +43,7 @@ export class ApiauthService {
 
     logout() {
         localStorage.removeItem('usuario');
-        this.usuarioSubject.next(null);// no permitió colocar null
+        this.usuarioSubject.next(null);
     }
 
 }

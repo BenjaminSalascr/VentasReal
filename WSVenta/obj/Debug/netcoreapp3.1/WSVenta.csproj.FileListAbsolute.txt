@@ -121,3 +121,4 @@ C:\Users\jorge\source\repos\VentasReal\WSVenta\obj\Debug\netcoreapp3.1\WSVenta.g
 C:\Users\jorge\source\repos\VentasReal\WSVenta\obj\Debug\netcoreapp3.1\WSVenta.csproj.AssemblyReference.cache
 C:\Users\jorge\source\repos\VentasReal\WSVenta\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\jorge.ardilar\source\repos\VentasReal\WSVenta\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\jorge.ardilar\source\repos\VentasReal\WSVenta\obj\Debug\netcoreapp3.1\WSVenta.csproj.AssemblyReference.cache
