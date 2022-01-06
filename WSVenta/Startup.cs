@@ -62,6 +62,8 @@ namespace WSVenta
                 });
 
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IVentaService, VentaService>();
+            //services.AddScoped<IVentaService, VentaService2>(); // CUANDO SON VARIAS CLASES QUE IMPLEMENTAN UNA INTERFAZ
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
