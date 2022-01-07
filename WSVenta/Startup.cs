@@ -8,6 +8,7 @@ using System.Text;
 using WSVenta.Models.Common;
 using WSVenta.Services;
 using Microsoft.IdentityModel.Tokens;
+using WSVenta.Tools;
 
 namespace WSVenta
 {
@@ -35,7 +36,13 @@ namespace WSVenta
                                         builder.WithMethods("*");//permite métodos
                                     });
             });
-            services.AddControllers();
+            services.AddControllers()
+                //configuración para que el backend detecte un string y lo transforme en int o decimal con las clases creadas en tools
+                .AddJsonOptions(options =>
+                {
+                    options.JsonSerializerOptions.Converters.Add(new IntToStringConverter());
+                    options.JsonSerializerOptions.Converters.Add(new DecimalToStringConverter());
+                });
 
             //configuración para JWT
             var appSettingsSection = Configuration.GetSection("AppSettings");//obtenemos la sección del appsettings.json
